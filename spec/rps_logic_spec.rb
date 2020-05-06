@@ -16,10 +16,15 @@ describe ('RPS#') do
  end 
  it("returns 'It's a tie!' if player1 & player2 select the same option") do 
     game = RPS.new()
-    expect(game.wins?("rock", "rock")).to(eq("It's a tie game! Try again!"))
+    expect(game.wins?("rock", "rock")).to(eq("It's a tie game!"))
  end 
  it("returns each players scores") do 
    game = RPS.new()
    expect(game.wins?("rock", "paper")).to(eq("Player Two Wins!"))
  end 
+ it("returns each players scores") do 
+  game = RPS.new()
+  expect(game.wins?("rock", "0")).to(eq("uh oh! please enter 'rock, paper, or scissors'"))
+end 
+
 end 
