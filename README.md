@@ -24,9 +24,11 @@ _This application will allow two users to select from the options "rock", "paper
 | 1. Allows two players to play against eachother [X] |
 | 2. Has winning conditions based off of user's selections [X]|
 | 3. Has tie-game conditions based off of user's selections [X]|
-| 4. Keeps score of wins & losses []|
-| 5. Tells user who won each game []|
-| 6. Allow users to select an option of : rock, paper or scissors []|
+| 4. Keeps players score [X]|
+| 5. Tells user who won each game [X]|
+| 6. Allows users to select an option of : rock, paper or scissors [X]|
+| 7. Doesn't allow the user to play when they enter something other than options [X]
+| 8. Allows user to select between playing against a human vs. playing against a computer []
 
 ## Known Bugs
 

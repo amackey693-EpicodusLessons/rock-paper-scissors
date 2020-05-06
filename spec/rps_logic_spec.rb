@@ -1,6 +1,7 @@
 require('rspec')
 require('rps_logic')
 
+
 describe ('RPS#') do
  it("returns true if rock is the object and scissors is the argument") do 
     game = RPS.new()
@@ -16,7 +17,7 @@ describe ('RPS#') do
  end 
  it("returns 'It's a tie!' if player1 & player2 select the same option") do 
     game = RPS.new()
-    expect(game.wins?("rock", "rock")).to(eq("It's a tie game!"))
+    expect(game.wins?("rock", "rock")).to(eq("Looks like you TIED!"))
  end 
  it("returns each players scores") do 
    game = RPS.new()
@@ -24,7 +25,7 @@ describe ('RPS#') do
  end 
  it("returns each players scores") do 
   game = RPS.new()
-  expect(game.wins?("rock", "0")).to(eq("yikes! you might want to put in 'rock, paper, or scissors next time!"))
+  expect(game.wins?("rock", "0")).to(eq("yikes! you might want to put in 'rock, paper, or scissors' next time!"))
   end 
 
 end 

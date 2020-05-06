@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 require('pry') 
+require ('io/console')
+require ('colorize')
 
 class RPS 
   def initialize()
@@ -10,43 +12,45 @@ class RPS
   def wins?(player1, player2)
     # conditions for tie game!
     if player1 == "rock" && player2 == "rock" || player1 == "scissors" && player2 == "scissors" || player1 == "paper" && player2 == "paper" 
-      results = "It's a tie game!"
+      puts "Looks like you TIED!"
 
     # conditions for player one winning
     elsif player1 == "rock" && player2 == "scissors" || player1 == "paper" && player2 == "rock" || player1 == "scissors" && player2 == "paper"
-      results = "Player One Wins!" 
       @p1_score = @p1_score + 1
+      puts "Player ONE Wins!".green
       puts "P1 Score: #{@p1_score} || P2 Score: #{@p2_score}"
 
     #conditions for player two winning
     elsif player2 == "rock" && player1 == "scissors" || player2 == "paper" && player1 == "rock" || player2 == "scissors" && player1 == "paper"
-     results = "Player Two Wins!" 
      @p2_score = @p2_score + 1
+     puts "Player TWO Wins!" .green
      puts "P1 Score: #{@p1_score} || P2 Score: #{@p2_score}"
+    # enters something other than answer
     else 
-     results = "yikes! you might want to put in 'rock, paper, or scissors next time!"
+     puts "yikes! you might want to put in 'rock, paper, or scissors' next time!"
     end
-    results
   end
 
   def run_game
-    puts "Player One: Choose rock, paper or scissors!"
-    player1 = gets.chomp
-    puts "Player Two: Choose rock, paper or scissors!"
-    player2 = gets.chomp
+    puts "Choose rock, paper or scissors!"
+    puts "Player One:"
+    player1 = STDIN.noecho(&:gets).chomp
+    puts "Player Two:"
+    player2 = STDIN.noecho(&:gets).chomp
     puts wins?(player1, player2)
-    puts "Would you like to play again? y or n"
+    puts "P1 Chose: " +"#{player1.upcase()}".bold + " & P2 Chose: " + "#{player2.upcase()}".bold
+    puts "Would you like to play again? ".cyan + "Y".bold + " or " + "N".bold
     answer = gets.chomp
     if (answer == "y" || answer == "yes")
       run_game
     else 
-      puts "FINAL SCORE"
+      puts "FINAL SCORE".black.on_white.bold
       puts "P1 Score: #{@p1_score} || P2 Score: #{@p2_score}"
       if @p1_score > @p2_score
-        puts "Player One WINS!"
+        puts "PLAYER ONE WINS!".green.bold
         puts "better luck next time player two!"
       else 
-        puts "Player Two WINS!"
+        puts "PLAYER TWO WINS!".green.bold
         puts "better luck next time player one!"
       end
     end
