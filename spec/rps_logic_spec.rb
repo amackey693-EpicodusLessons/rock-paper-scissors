@@ -18,4 +18,8 @@ describe ('RPS#') do
   game = RPS.new("rock", "rock")
   expect(game.wins?).to(eq("It's a tie game! Try again!"))
  end 
+ it("returns each players scores") do 
+  game = RPS.new("rock", "paper")
+  expect(game.wins?.score?).to(eq("Player Two Wins!", P1 = [0] & P2 =[1]))
+ end 
 end 
