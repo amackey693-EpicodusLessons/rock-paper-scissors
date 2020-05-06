@@ -8,28 +8,22 @@ class RPS
   end
 
   def wins?(player1, player2)
-    #conditions for wrong entry
-    # if player1 != "rock" || player1 != "scissors" || player1 != "paper" || player2 != "rock" || player2 != "scissors" || player2 != "paper" 
-    #   results = "uh oh! please enter 'rock, paper, or scissors'"
-    #   return results
-    # end
-
     # conditions for tie game!
     if player1 == "rock" && player2 == "rock" || player1 == "scissors" && player2 == "scissors" || player1 == "paper" && player2 == "paper" 
       results = "It's a tie game!"
+
     # conditions for player one winning
     elsif player1 == "rock" && player2 == "scissors" || player1 == "paper" && player2 == "rock" || player1 == "scissors" && player2 == "paper"
       results = "Player One Wins!" 
       @p1_score = @p1_score + 1
-      puts "P1 Score: #{@p1_score}"
-      puts "P2 Score: #{@p2_score}"
+      puts "P1 Score: #{@p1_score} || P2 Score: #{@p2_score}"
+
     #conditions for player two winning
-    else
+    else 
      results = "Player Two Wins!" 
      @p2_score = @p2_score + 1
-     puts "P1 Score: #{@p1_score}"
-     puts "P2 Score: #{@p2_score}"
-    end  
+     puts "P1 Score: #{@p1_score} || P2 Score: #{@p2_score}"
+    end
     results
   end
 
@@ -39,23 +33,20 @@ class RPS
     puts "Player Two: Choose rock, paper or scissors!"
     player2 = gets.chomp
     puts wins?(player1, player2)
-    puts "Would you like to play again?"
+    puts "Would you like to play again? y or n"
     answer = gets.chomp
     if (answer == "y" || answer == "yes")
       run_game
     else 
-      puts "enjoy the rest of your day!"
+      puts "FINAL SCORE"
+      puts "P1 Score: #{@p1_score} || P2 Score: #{@p2_score}"
+      if @p1_score > @p2_score
+        puts "Player One WINS!"
+        puts "better luck next time player two!"
+      else 
+        puts "Player Two WINS!"
+        puts "better luck next time player one!"
+      end
     end
   end
 end 
-
-# def score?()
-  #   if results == "Player One Wins!"
-  #     @p1_score += 1
-  #     puts p1_score
-  #     puts p2_score
-  #   elsif results == "Player Two Wins!"
-  #     @p2_score += 1
-  #     puts p1_score
-  #     puts p2_score
-  #   end
