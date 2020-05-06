@@ -12,7 +12,7 @@ class RPS
     # player1_score = []
     # player2_score = []
     if @player1 == "rock" && @player2 == "scissors" || @player1 == "paper" && @player2 == "rock" || @player1 == "scissors" && @player2 == "paper"
-     results = "Player Two Wins!"
+     results = "Player One Wins!"
     else 
      results = "Player Two Wins!"
     end
