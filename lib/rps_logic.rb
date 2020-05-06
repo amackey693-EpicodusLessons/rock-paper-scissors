@@ -15,10 +15,10 @@ class RPS
      results = false    
     end
 
-    #conditions for tie game!
-    # if @player1 == "rock" && @player2 == "rock" || @player1 == "scissors" && @player2 == "scissors" || @player1 == "paper" && @player2 == "paper" 
-    #   results = "It's a tie game!"
-    #  end
+    # conditions for tie game!
+    if @player1 == "rock" && @player2 == "rock" || @player1 == "scissors" && @player2 == "scissors" || @player1 == "paper" && @player2 == "paper" 
+      results = "It's a tie game!"
+    end
     results
   end
 end
