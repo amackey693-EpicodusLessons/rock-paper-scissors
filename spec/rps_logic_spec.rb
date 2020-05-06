@@ -6,4 +6,8 @@ describe ('RPS#') do
   game = RPS.new("rock", "scissors")
   expect(game.wins?("rock", "scissors")).to(eq(true))
  end 
+ it("returns true if scissors is the object and paper is the argument") do 
+  game = RPS.new("scissors", "paper")
+  expect(game.wins?("scissors", "paper")).to(eq(true))
+ end 
 end 
