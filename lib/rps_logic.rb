@@ -2,18 +2,28 @@
 require('pry') 
 
 class RPS 
-  def initialize()
-    @p1_score = 0
-    @p2_score = 0
-  end
+  # def initialize()
+  #   @p1_score = 0
+  #   @p2_score = 0
+  # end
 
   def wins?(player1, player2)
+    p1_score = 0
+    p2_score = 0
     # conditions for player one winning
     if player1 == "rock" && player2 == "scissors" || player1 == "paper" && player2 == "rock" || player1 == "scissors" && player2 == "paper"
       results = "Player One Wins!" 
+      p1_score += 1
+      p2_score = p2_score
+      puts p1_score
+      puts p2_score
     #conditions for player two winning
     else
      results = "Player Two Wins!" 
+     p2_score += 1
+     p1_score = p1_score
+     puts p1_score
+     puts p2_score
     end
     # conditions for tie game!
     if player1 == "rock" && player2 == "rock" || player1 == "scissors" && player2 == "scissors" || player1 == "paper" && player2 == "paper" 
@@ -21,15 +31,14 @@ class RPS
     end
     results
   end
-  def score?()
-    if results == "Player One Wins!"
-      @p1_score += 1
-      puts p1_score
-      puts p2_score
-    elsif results == "Player Two Wins!"
-      @p2_score += 1
-      puts p1_score
-      puts p2_score
-    end
-  end
-end
+end  
+# def score?()
+  #   if results == "Player One Wins!"
+  #     @p1_score += 1
+  #     puts p1_score
+  #     puts p2_score
+  #   elsif results == "Player Two Wins!"
+  #     @p2_score += 1
+  #     puts p1_score
+  #     puts p2_score
+  #   end
