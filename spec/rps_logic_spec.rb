@@ -24,7 +24,7 @@ describe ('RPS#') do
  end 
  it("returns each players scores") do 
   game = RPS.new()
-  expect(game.wins?("rock", "0")).to(eq("uh oh! please enter 'rock, paper, or scissors'"))
-end 
+  expect(game.wins?("rock", "0")).to(eq("yikes! you might want to put in 'rock, paper, or scissors next time!"))
+  end 
 
 end 

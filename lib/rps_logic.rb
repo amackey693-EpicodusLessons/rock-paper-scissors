@@ -19,10 +19,12 @@ class RPS
       puts "P1 Score: #{@p1_score} || P2 Score: #{@p2_score}"
 
     #conditions for player two winning
-    else 
+    elsif player2 == "rock" && player1 == "scissors" || player2 == "paper" && player1 == "rock" || player2 == "scissors" && player1 == "paper"
      results = "Player Two Wins!" 
      @p2_score = @p2_score + 1
      puts "P1 Score: #{@p1_score} || P2 Score: #{@p2_score}"
+    else 
+     results = "yikes! you might want to put in 'rock, paper, or scissors next time!"
     end
     results
   end
