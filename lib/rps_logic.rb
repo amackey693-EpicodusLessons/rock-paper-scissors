@@ -7,7 +7,7 @@ class RPS
     @player2 = player2
   end
 
-  def wins?(player1, player2) 
+  def wins?
     # conditions for player one winning // if results = false player 2 wins 
     # player1_score = []
     # player2_score = []
